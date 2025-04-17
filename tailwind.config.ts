@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -61,7 +62,16 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
-				}
+				},
+				// Custom brand colors
+				blush: "#FFDEE2",
+				cream: "#F9F6F0",
+				lavender: "#E5DEFF",
+				gold: "#E6B980",
+			},
+			fontFamily: {
+				playfair: ["Playfair Display", "serif"],
+				poppins: ["Poppins", "sans-serif"],
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
@@ -84,11 +94,53 @@ export default {
 					to: {
 						height: '0'
 					}
+				},
+				'fade-in': {
+					'0%': { 
+						opacity: '0',
+						transform: 'translateY(10px)'
+					},
+					'100%': { 
+						opacity: '1', 
+						transform: 'translateY(0)'
+					}
+				},
+				'fade-in-left': {
+					'0%': { 
+						opacity: '0',
+						transform: 'translateX(-20px)'
+					},
+					'100%': { 
+						opacity: '1', 
+						transform: 'translateX(0)'
+					}
+				},
+				'glow': {
+					'0%, 100%': { 
+						boxShadow: '0 0 5px rgba(230, 185, 128, 0.5)'
+					},
+					'50%': { 
+						boxShadow: '0 0 20px rgba(230, 185, 128, 0.8)'
+					}
+				},
+				'flicker': {
+					'0%, 100%': { 
+						opacity: '1',
+						transform: 'translateY(0) scale(1)'
+					},
+					'50%': { 
+						opacity: '0.9',
+						transform: 'translateY(-1px) scale(0.98)'
+					}
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'fade-in': 'fade-in 0.7s ease-out forwards',
+				'fade-in-left': 'fade-in-left 0.7s ease-out forwards',
+				'glow': 'glow 2s ease-in-out infinite',
+				'flicker': 'flicker 3s ease-in-out infinite'
 			}
 		}
 	},
